@@ -101,7 +101,8 @@ async def main() -> None:
     """
     access_token = os.getenv("ACCESS_TOKEN")
     if not access_token:
-        # access_token = os.getenv("GITHUB_TOKEN")
+        access_token = os.getenv("GITHUB_TOKEN")
+    if not access_token:
         raise Exception("A personal access token is required to proceed!")
     user = os.getenv("GITHUB_ACTOR")
     if user is None:
